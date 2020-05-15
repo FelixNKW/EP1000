@@ -75,6 +75,7 @@
  }
 
  h2 {
+ 	float: left;
   	font-family: georgia;
  	color: #fff;
  	font-size: 25px;	

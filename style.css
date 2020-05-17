@@ -68,36 +68,28 @@
  }
 
  h1 {
- 	margin: 0;
- 	float: left;
  	font-family: georgia;
  	color: #fff;
  	font-size: 30px;
  }
 
  h2 {
- 	margin: 0;
- 	float: top;
   	font-family: georgia;
  	color: #fff;
  	font-size: 25px;	
  }
 
  p{
- 	margin: 0;
- 	float: top;
  	font-family: georgia;
  	color: #fff;
  	font-size: 20px;
  }
  ol{
- 	margin: 0;
  	font-family: georgia;
  	color: #fff;
  	font-size: 20px;
  }
  tr{
- 	margin: 0;
  	font-family: georgia;
  	color: #fff;
  	font-size: 20px;

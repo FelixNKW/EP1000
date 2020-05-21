@@ -109,9 +109,14 @@
  	color: #00FFFF;
  	font-size: 20px;	
  }
+ p ul li a{
+ 			text-decoration: none;
+  			font-family: georgia;
+ 			color: #00FFFF;
+ 			font-size: 20px;
+ }
  p ul li{
- 		text-decoration: none;
   		font-family: georgia;
- 		color: #00FFFF;
- 		font-size: 20px;
+ 		color: #fff;
+ 		font-size: 20px;	
  }

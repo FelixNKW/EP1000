@@ -81,6 +81,7 @@
  }
 
  p{
+ 	margin: 0;
  	font-family: georgia;
  	color: #fff;
  	font-size: 20px;
@@ -97,6 +98,7 @@
  }
 
  p a{
+ 	margin: 0;
   	font-family: georgia;
  	color: #fff;
  	font-size: 20px;	

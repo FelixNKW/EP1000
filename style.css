@@ -98,7 +98,7 @@
  }
 
  p a{
- 	margin: 0;
+ 	text-decoration: none;
   	font-family: georgia;
  	color: #fff;
  	font-size: 20px;	

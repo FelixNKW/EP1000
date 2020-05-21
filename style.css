@@ -87,10 +87,19 @@
  	font-size: 20px;
  }
  ol {
+ 	list-style-type: circle;
  	font-family: georgia;
  	color: #fff;
  	font-size: 20px;
  }
+
+ ul{
+ 	list-style-type: circle;
+ 	font-family: georgia;
+ 	color: #fff;
+ 	font-size: 20px;
+ }
+
  tr{
  	font-family: georgia;
  	color: #fff;
@@ -108,18 +117,15 @@
  	color: #00FFFF;
  	font-size: 20px;	
  }
- p ul li{
-  		font-family: georgia;
- 		color: #fff;
- 		font-size: 20px;	
- }
  ul li a{
-   			font-family: georgia;
- 			color: #00FFFF;
- 			font-size: 20px;
+ 	 text-decoration: none;
+   		font-family: georgia;
+ 		color: #00FFFF;
+ 		font-size: 20px;
  }
  ol li a{
-    			font-family: georgia;
- 			color: #00FFFF;
- 			font-size: 20px;
+ 		text-decoration: none;
+   		font-family: georgia;
+ 		color: #00FFFF;
+ 		font-size: 20px;
  }

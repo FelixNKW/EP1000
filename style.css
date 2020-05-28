@@ -118,7 +118,8 @@ h3{
  	font-size: 20px;	
  }
  a{
-  	font-family: georgia;
+  text-decoration: none;
+  font-family: georgia;
  	color: #00FFFF;
  	font-size: 20px;	
  }

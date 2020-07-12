@@ -216,5 +216,44 @@ tr, td {
 <p>End Product (.f3d): <a href="3d/kn.f3d">Knight Piece</a></p>
 <br>
 <h2>Parametric Design</h2>
+<br>
+<h3>Tips & Tricks</h3>
+<br>
+<p>
+	- Set the Z-axis pointing upwards, this is done in the preferences section.<br>
+	- Create, name and save your file at the beginning. Fusion 360 will save your file every 5/10 <br>minutes after that and it provides a backup. Also if you conciously save your file,<br>you can add a  comment which allows for versioning.<br>
+	- Start all sketches from the origin. Reference all other sketches from this point.<br>It provides an anchor point for your work.<br>
+	- Constraint your sketches (tools are in the ribbon bar). This locks your sketches down<br>and prevents errors which you cannot see.<br>
+	- Dimension your lines. This is similar to constraining your sketches.<br>It prevents you from errornously.
+</p>
+<br>
+<p>
+	- Fusion 360 allows the definition of parameters. The parameters act as variables and allow<br> change after assignment. For example, if you initially designed an object with 3mm wood/acrylic<br> and decide to change it to 5mm, you won’t have to redraw your work, if you had defined your <br>design using a parameter for thickness.
+	<br>
+	- Most of Fusion 360 dimensioning can be replaced with a function. A function can be:<br>
+	-> a value (fixed), you can change it in the sketch, but you have to chave every instance of it.
+	<br>
+	-> user parameter/variable. You define it in the Modify > Change Parameters menu.<br>You need to define:
+	1. Name - identifies the variable/parameter<br>
+	2. Unit - No units, or a form of measurement (e.g. mm, in, ft)<br>
+	3. Expression - how it is calculated, a value or function<br>
+	4. Comment - some text which explains its use.<br>
+	-> another dimension - you can click on another dimension to<br> make the parameter take on the same value.
+	-> a function - you can write a function using constants,<br>variables and mathematical operators
+</p>
+<br>
+<p>
+	Always check that your parameters or items which are dimensioned with parameters<br>are locked on a fixed position or point, otherwise your drawing<br>would look strange if you change one of the parameters.
+</p>
+<br>
+<p>
+	Here are my parameters and parametric box: <a href="img/para.PNG"><img src="img/para.PNG"></a>
+	<br>
+	<a href="img/box.PNG"><img src="img/box.PNG"></a>
+</p>
+<br>
+<iframe src="https://ichat168.autodesk360.com/shares/public/SH56a43QTfd62c1cd9684480a8d372196e57?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+<br>
+<a href="3d/box.f3d">Parametric Box</a>
 </body>
 </html>

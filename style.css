@@ -99,7 +99,6 @@ h3{
  }
 
  ul{
- 	list-style-type: circle;
  	font-family: georgia;
  	color: #fff;
  	font-size: 20px;
@@ -125,7 +124,7 @@ h3{
  }
  ul li a{
  	 	text-decoration: none;
-   		font-family: georgia;
+   	font-family: georgia;
  		color: #00FFFF;
  		font-size: 20px;
  }

@@ -125,9 +125,60 @@ th, td {
  - Creating a usable 3D design- Converting the design into a 3D representable file (.STL)<br>
  - Slicing the 3D representable file into layers<br>
  - Converting the layers into instructions for the 3D printer (gcode)<br>
- - The 3D printer creates the 3D object.</p>
+ - The 3D printer creates the 3D object.</p><br>
+ <br>
+<p>The 3D Printing Process is a Digital Fabrication process. We start with a digital<br>design and convert it to a format which the 3D printer can implement.<br>
+The digital process begins with a design of a 3D model, which can be obtained by:<br>
+ - Designing with CAD software (e.g. Fusion 360) <br>
+ - Curated from archives (e.g. Thingiverse, My Minifactory or other libraries)<br>
+In using CAD, we develop a 3D model in the application of choice, we need to find a common<br> technique of representing this model. The two common methods are:<br>
+STL (Standard Tesselaltion Language)<br>
+OBJ<br>
+</p>
 <br>
-<p>I will be mainly focusing on the ultimaker 2+ using the cura app</p><br>
+<h3>This is how u save your 3D models into a STL file with Fusion 360</h3>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: top;
+}
+</style>
+<table style="width: 100%">
+	<tr>
+		<th>Ways to save as .STL</th>
+		<th>Example</th>
+	</tr>
+
+	<tr>
+		<td>1.Direct saving as STL<br>
+			a) Object Browser -> Select Object -> R-click -> Save as STL<br>
+			b) Select Folder and Name</td>
+		<td><a href="img/stl1.png"><img src="img/stl1.png" width="50%"></a></td>
+	</tr>
+
+	<tr>
+		<td>2.Tools -> Make -> 3D Print</td>
+		<td><a href="img/stl2.png"><img src="img/stl2.png" width="50%"></a></td>
+	</tr>
+
+	<tr>
+		<td>3.3D Print Menu<br>
+			a) Select Object<br>
+			b) Preview Mesh : Yes<br>
+			c) Refinement : Medium<br>
+			d) Output > Send to 3d Print Utility : No
+			<br>
+			Output will be saved as an STL file.</td>
+		<td><a href="img/stl3.png"><img src="img/stl3.png" width="50%"></a></td>
+	</tr>
+</table>
+<br>
+
+<p>I will be mainly focusing on the ultimaker cura software.</p><br>
 <p>Feel free to <a href="https://ultimaker.com/software/ultimaker-cura">download</a> it if you have not</p>
 
 </body>

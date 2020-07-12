@@ -154,32 +154,126 @@ th, td {
 	</tr>
 
 	<tr>
-		<td>1.Direct saving as STL<br>
+		<td>1. Direct saving as STL<br>
 			a) Object Browser -> Select Object -> R-click -> Save as STL<br>
 			b) Select Folder and Name</td>
-		<td><a href="img/stl1.png"><img src="img/stl1.png" width="50%"></a></td>
+		<td><a href="img/stl1.png"><img src="img/stl1.png" width="70%"></a></td>
 	</tr>
 
 	<tr>
-		<td>2.Tools -> Make -> 3D Print</td>
-		<td><a href="img/stl2.png"><img src="img/stl2.png" width="50%"></a></td>
+		<td>2. Tools -> Make -> 3D Print</td>
+		<td><a href="img/stl2.png"><img src="img/stl2.png" width="70%"></a></td>
 	</tr>
 
 	<tr>
-		<td>3.3D Print Menu<br>
+		<td>3. 3D Print Menu<br>
 			a) Select Object<br>
 			b) Preview Mesh : Yes<br>
 			c) Refinement : Medium<br>
 			d) Output > Send to 3d Print Utility : No
 			<br>
 			Output will be saved as an STL file.</td>
-		<td><a href="img/stl3.png"><img src="img/stl3.png" width="50%"></a></td>
+		<td><a href="img/stl3.png"><img src="img/stl3.png" width="70%"></a></td>
 	</tr>
 </table>
 <br>
+<p>Now, we are ready to slice our STL file:<br>
+ - Slicing cuts the object into layers.<br>
+ - Each layer is a printable level in the X-Y coordinates.<br>
+ - The 3D Printer head moves up one layer at-a-time in the Z-axis.</p>
+<br>
+<p>I will be mainly focusing on the ultimaker cura software which can be applied<br>to the 3 above printers.</p><br>
+<p>Feel free to <a href="https://ultimaker.com/software/ultimaker-cura">download</a> it if you have not</p><br>
+<p>The main job of the slicer software is to* convert the STL file into layers,* determine the print characteristic of each layer* convert the print characteristics of the layer into a language understanable by the 3D Printer (usually gcode)</p>
+<br>
+<p>The slicer software will usually have the configuration code for a particular set of 3D Printer(s). The machine-readable code is saved/transferred to the 3D Printer using a SDCard/Thumbdrive or by network to perform the actual printing process.</p>
+<br>
+<h2>3D Printer Characteristics</h2>
+<br>
+<p>These are some of the common characteristics you can adjust:</p><br>
+<a href="img/3dc.PNG"><img src="img/3dc.PNG" width="50%"></a>
 
-<p>I will be mainly focusing on the ultimaker cura software.</p><br>
-<p>Feel free to <a href="https://ultimaker.com/software/ultimaker-cura">download</a> it if you have not</p>
+<br>
+<p>However, I will only be covering 4 of the more important characteristics: </p>
+<br>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: top;
+}
+</style>
+<table style="width: 100%">
 
+<tr>
+	<td>
+		Quality/Layer Height<br>
+		- The height of each printed layer of<br>the 3D print<br>
+		- Thinner layers give finer prints<br>
+		- 3D prints with thinner layers take<br>longer to print<br>
+		- Ranges from 0.1~0.4mm for a 0.4<br>nozzle (typical 0.2mm)<br>
+		- Affects resolution, speed and<br>smoothness of print
+	</td>
+	<td>
+		<a href="img/lh.png"><img src="img/lh.png" width="50%"></a>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Infill<br>
+		- Controls the amount of fill in the<br>internal cavities.<br>
+		- Higher infills give more strength.<br>
+		- Higher infills take longer time to<br>print.<br>
+		- You can select different infill<br>patterns.<br>
+		- Typical infills 10~18%.
+	</td>
+	<td>
+		<a href="img/ip.png"><img src="img/ip.png" width="50%"></a>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Support<br>
+		- Supports are used to aid in printing<br>overhangs<br>
+		- Supports make impossible prints possible<br>
+		- Supports are removed after the print is<br>complete<br>
+		- Supports add to the print time as well as<br>the touch-up and finishing time to the model<br>
+		- Orientation of the model helps in the<br>determining of supports
+	</td>
+	<td>
+		<a href="img/sup.png"><img src="img/sup.png" width="50%"></a>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Build Plate Adhesion<br>
+		- The print bed is usually heated to improve adhesion<br>
+		- Skirts are used to provide an outline - no adhesion<br>
+		- Brims allow some adhesion to the print perimeter<br>
+		- Rafts are full platforms on which the 3D print is placed.<br>Print adhesion is onto the raft instead of the bed.
+	</td>
+	<td>
+		<a href="img/sup.png"><img src="img/sup.png" width="50%"></a>
+	</td>
+</tr>
+</table>
+
+
+<br>
+<p>
+	Feel free to experiment with the different settings:) .<br>
+	Different settings can increase or decrease the time taken to print your object.
+</p>
+
+
+
+
+<br>
 </body>
 </html>

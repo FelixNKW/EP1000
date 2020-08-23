@@ -86,7 +86,7 @@
 	<br>
 	Afterwards, I constructed a 2x2 Design Matrix to determine the best idea to build given the 3 weeks time frame.
 	<br>
-	<a href="img/dp.PNG"><img src="img/dp.PNG" width = 25%></a>
+	<a href="img/dm.PNG"><img src="img/dm.PNG" width = 25%></a>
 	<br>
 	With the design matrix & limitations given, I figured the Mood Lamp was the best choice.
 	<br>
@@ -106,7 +106,9 @@
 	<br>
 	<a href="img/l.PNG"><img src="img/1.PNG"></a>
 	<br>
-	'iframe'
+	<br>
+	<iframe src="https://ichat168.autodesk360.com/shares/public/SH56a43QTfd62c1cd96853b1916c7897ad36?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+	<br>
 	<br>
 	After designing the model in Fusion 360, all that's left to do is the Programming, Fabrication and Assembly.
 	<br>
@@ -121,217 +123,7 @@
 	<br>
 	After interfacing my Ultrasonic Sensor.
 	<br>
-	<pre>
-
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">trigPin</font> <font color="#434f54">=</font> <font color="#000000">8</font><font color="#000000">;</font>
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">echoPin</font> <font color="#434f54">=</font> <font color="#000000">11</font><font color="#000000">;</font>
-
-<font color="#00979c">long</font> <font color="#000000">duration</font><font color="#000000">;</font>
-<font color="#00979c">int</font> <font color="#000000">distance</font><font color="#000000">;</font>
-
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">trigPin</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">echoPin</font><font color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
-<font color="#000000">}</font>
-
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigPin</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigPin</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigPin</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
-
- &nbsp;<font color="#000000">duration</font> <font color="#434f54">=</font> <font color="#d35400">pulseIn</font><font color="#000000">(</font><font color="#000000">echoPin</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">distance</font> <font color="#434f54">=</font> <font color="#000000">(</font><font color="#000000">duration</font><font color="#434f54">*</font><font color="#000000">.0343</font><font color="#000000">)</font><font color="#434f54">&#47;</font><font color="#000000">2</font><font color="#000000">;</font>
- &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;Distance: &#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">distance</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">100</font><font color="#000000">)</font><font color="#000000">;</font>
-<font color="#000000">}</font>
-
-</pre>
-	<br>
 	I spliced the Adafruit NeoPixel buttoncycler example with my ultrasonic Sensor code to produce the final code.
-	<br>
-	<pre>
-<font color="#434f54">&#47;&#47; Simple demonstration on using an input device to trigger changes on your</font>
-<font color="#434f54">&#47;&#47; NeoPixels. Wire a momentary push button to connect from ground to a</font>
-<font color="#434f54">&#47;&#47; digital IO pin. When the button is pressed it will change to a new pixel</font>
-<font color="#434f54">&#47;&#47; animation. Initial state has all pixels off -- press the button once to</font>
-<font color="#434f54">&#47;&#47; start the first animation. As written, the button does not interrupt an</font>
-<font color="#434f54">&#47;&#47; animation in-progress, it works only when idle.</font>
-
-<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Adafruit_NeoPixel</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
-<font color="#5e6d03">#ifdef</font> <font color="#000000">__AVR__</font>
- <font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><font color="#000000">avr</font><font color="#434f54">&#47;</font><font color="#000000">power</font><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font> <font color="#434f54">&#47;&#47; Required for 16 MHz Adafruit Trinket</font>
-<font color="#5e6d03">#endif</font>
-
-<font color="#434f54">&#47;&#47; Digital IO pin connected to the button. This will be driven with a</font>
-<font color="#434f54">&#47;&#47; pull-up resistor so the switch pulls the pin to ground momentarily.</font>
-<font color="#434f54">&#47;&#47; On a high -&gt; low transition the button press logic will execute.</font>
-
-
-<font color="#5e6d03">#define</font> <font color="#000000">PIXEL_PIN</font> &nbsp;&nbsp;&nbsp;<font color="#000000">6</font> &nbsp;<font color="#434f54">&#47;&#47; Digital IO pin connected to the NeoPixels.</font>
-
-<font color="#5e6d03">#define</font> <font color="#000000">PIXEL_COUNT</font> <font color="#000000">6</font> <font color="#434f54">&#47;&#47; Number of NeoPixels</font>
-
-<font color="#434f54">&#47;&#47; Declare our NeoPixel strip object:</font>
-<b><font color="#d35400">Adafruit_NeoPixel</font></b> <font color="#000000">strip</font><font color="#000000">(</font><font color="#000000">PIXEL_COUNT</font><font color="#434f54">,</font> <font color="#000000">PIXEL_PIN</font><font color="#434f54">,</font> <font color="#d35400">NEO_GRB</font> <font color="#434f54">+</font> <font color="#d35400">NEO_KHZ800</font><font color="#000000">)</font><font color="#000000">;</font>
-<font color="#434f54">&#47;&#47; Argument 1 = Number of pixels in NeoPixel strip</font>
-<font color="#434f54">&#47;&#47; Argument 2 = Arduino pin number (most are valid)</font>
-<font color="#434f54">&#47;&#47; Argument 3 = Pixel type flags, add together as needed:</font>
-<font color="#434f54">&#47;&#47; &nbsp;&nbsp;NEO_KHZ800 &nbsp;800 KHz bitstream (most NeoPixel products w&#47;WS2812 LEDs)</font>
-<font color="#434f54">&#47;&#47; &nbsp;&nbsp;NEO_KHZ400 &nbsp;400 KHz (classic &#39;v1&#39; (not v2) FLORA pixels, WS2811 drivers)</font>
-<font color="#434f54">&#47;&#47; &nbsp;&nbsp;NEO_GRB &nbsp;&nbsp;&nbsp;&nbsp;Pixels are wired for GRB bitstream (most NeoPixel products)</font>
-<font color="#434f54">&#47;&#47; &nbsp;&nbsp;NEO_RGB &nbsp;&nbsp;&nbsp;&nbsp;Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)</font>
-<font color="#434f54">&#47;&#47; &nbsp;&nbsp;NEO_RGBW &nbsp;&nbsp;&nbsp;Pixels are wired for RGBW bitstream (NeoPixel RGBW products)</font>
-
-<font color="#00979c">int</font> &nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">mode</font> &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; Currently-active animation mode, 0-9</font>
-
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">trigPin</font> <font color="#434f54">=</font> <font color="#000000">9</font><font color="#000000">;</font>
-<font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">echoPin</font> <font color="#434f54">=</font> <font color="#000000">10</font><font color="#000000">;</font>
-
-<font color="#00979c">long</font> <font color="#000000">duration</font><font color="#000000">;</font>
-<font color="#00979c">int</font> <font color="#000000">distance</font><font color="#000000">;</font>
-
-<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; Initialize NeoPixel strip object (REQUIRED)</font>
- &nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">show</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47; Initialize all pixels to &#39;off&#39;</font>
-
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">trigPin</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">echoPin</font><font color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
-<font color="#000000">}</font>
-
-<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigPin</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigPin</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigPin</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
-
- &nbsp;<font color="#000000">duration</font> <font color="#434f54">=</font> <font color="#d35400">pulseIn</font><font color="#000000">(</font><font color="#000000">echoPin</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">distance</font> <font color="#434f54">=</font> <font color="#000000">(</font><font color="#000000">duration</font><font color="#434f54">*</font><font color="#000000">.0343</font><font color="#000000">)</font><font color="#434f54">&#47;</font><font color="#000000">2</font><font color="#000000">;</font>
- &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;Distance: &#34;</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">distance</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">100</font><font color="#000000">)</font><font color="#000000">;</font>
-
-
- &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">distance</font> <font color="#434f54">&lt;=</font> <font color="#000000">4</font><font color="#000000">)</font><font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#434f54">++</font><font color="#000000">mode</font> <font color="#434f54">&gt;</font> <font color="#000000">8</font><font color="#000000">)</font> <font color="#000000">mode</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; Advance to next mode, wrap around after #8</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">switch</font><font color="#000000">(</font><font color="#000000">mode</font><font color="#000000">)</font> <font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; Start the new animation...</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">0</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">colorWipe</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">Color</font><font color="#000000">(</font> &nbsp;<font color="#000000">0</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">0</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">0</font><font color="#000000">)</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; Black&#47;off</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">1</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">colorWipe</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">Color</font><font color="#000000">(</font><font color="#000000">255</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">0</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">255</font><font color="#000000">)</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; purple</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">2</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">colorWipe</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">Color</font><font color="#000000">(</font> &nbsp;<font color="#000000">255</font><font color="#434f54">,</font> <font color="#000000">255</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">0</font><font color="#000000">)</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; yeloow?</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">3</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">colorWipe</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">Color</font><font color="#000000">(</font> &nbsp;<font color="#000000">0</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">255</font><font color="#434f54">,</font> <font color="#000000">255</font><font color="#000000">)</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; cyan</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">4</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">theaterChase</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">Color</font><font color="#000000">(</font><font color="#000000">127</font><font color="#434f54">,</font> <font color="#000000">127</font><font color="#434f54">,</font> <font color="#000000">127</font><font color="#000000">)</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; White</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">5</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">theaterChase</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">Color</font><font color="#000000">(</font> &nbsp;<font color="#000000">0</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">0</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">255</font><font color="#000000">)</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; blue</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">6</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">theaterChase</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">Color</font><font color="#000000">(</font> &nbsp;<font color="#000000">0</font><font color="#434f54">,</font> &nbsp;&nbsp;<font color="#000000">255</font><font color="#434f54">,</font> <font color="#000000">0</font><font color="#000000">)</font><font color="#434f54">,</font> <font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; green</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">7</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">rainbow</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">case</font> <font color="#000000">8</font><font color="#434f54">:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">theaterChaseRainbow</font><font color="#000000">(</font><font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">break</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-<font color="#000000">}</font>
-
-<font color="#434f54">&#47;&#47; Fill strip pixels one after another with a color. Strip is NOT cleared</font>
-<font color="#434f54">&#47;&#47; first; anything there will be covered pixel by pixel. Pass in color</font>
-<font color="#434f54">&#47;&#47; (as a single &#39;packed&#39; 32-bit value, which you can get by calling</font>
-<font color="#434f54">&#47;&#47; strip.Color(red, green, blue) as shown in the loop() function above),</font>
-<font color="#434f54">&#47;&#47; and a delay time (in milliseconds) between pixels.</font>
-<font color="#00979c">void</font> <font color="#000000">colorWipe</font><font color="#000000">(</font><font color="#00979c">uint32_t</font> <font color="#000000">color</font><font color="#434f54">,</font> <font color="#00979c">int</font> <font color="#000000">wait</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">numPixels</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">&#47;&#47; For each pixel in strip...</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">setPixelColor</font><font color="#000000">(</font><font color="#000000">i</font><font color="#434f54">,</font> <font color="#000000">color</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; &nbsp;Set pixel&#39;s color (in RAM)</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">show</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; &nbsp;Update strip to match</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">wait</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; &nbsp;Pause for a moment</font>
- &nbsp;<font color="#000000">}</font>
-<font color="#000000">}</font>
-
-<font color="#434f54">&#47;&#47; Theater-marquee-style chasing lights. Pass in a color (32-bit value,</font>
-<font color="#434f54">&#47;&#47; a la strip.Color(r,g,b) as mentioned above), and a delay time (in ms)</font>
-<font color="#434f54">&#47;&#47; between frames.</font>
-<font color="#00979c">void</font> <font color="#000000">theaterChase</font><font color="#000000">(</font><font color="#00979c">uint32_t</font> <font color="#000000">color</font><font color="#434f54">,</font> <font color="#00979c">int</font> <font color="#000000">wait</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">a</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">a</font><font color="#434f54">&lt;</font><font color="#000000">10</font><font color="#000000">;</font> <font color="#000000">a</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font> &nbsp;<font color="#434f54">&#47;&#47; Repeat 10 times...</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">b</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">b</font><font color="#434f54">&lt;</font><font color="#000000">3</font><font color="#000000">;</font> <font color="#000000">b</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">&#47;&#47; &nbsp;&#39;b&#39; counts from 0 to 2...</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">clear</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; &nbsp;&nbsp;Set all pixels in RAM to 0 (off)</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; &#39;c&#39; counts up from &#39;b&#39; to end of strip in steps of 3...</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">c</font><font color="#434f54">=</font><font color="#000000">b</font><font color="#000000">;</font> <font color="#000000">c</font><font color="#434f54">&lt;</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">numPixels</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#000000">c</font> <font color="#434f54">+=</font> <font color="#000000">3</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">setPixelColor</font><font color="#000000">(</font><font color="#000000">c</font><font color="#434f54">,</font> <font color="#000000">color</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; Set pixel &#39;c&#39; to value &#39;color&#39;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">show</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; Update strip with new contents</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">wait</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47; Pause for a moment</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;<font color="#000000">}</font>
-<font color="#000000">}</font>
-
-<font color="#434f54">&#47;&#47; Rainbow cycle along whole strip. Pass delay time (in ms) between frames.</font>
-<font color="#00979c">void</font> <font color="#000000">rainbow</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">wait</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#434f54">&#47;&#47; Hue of first pixel runs 3 complete loops through the color wheel.</font>
- &nbsp;<font color="#434f54">&#47;&#47; Color wheel has a range of 65536 but it&#39;s OK if we roll over, so</font>
- &nbsp;<font color="#434f54">&#47;&#47; just count from 0 to 3*65536. Adding 256 to firstPixelHue each time</font>
- &nbsp;<font color="#434f54">&#47;&#47; means we&#39;ll make 3*65536&#47;256 = 768 passes through this outer loop:</font>
- &nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">long</font> <font color="#000000">firstPixelHue</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">firstPixelHue</font> <font color="#434f54">&lt;</font> <font color="#000000">3</font><font color="#434f54">*</font><font color="#000000">65536</font><font color="#000000">;</font> <font color="#000000">firstPixelHue</font> <font color="#434f54">+=</font> <font color="#000000">256</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">&lt;</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">numPixels</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">&#47;&#47; For each pixel in strip...</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; Offset pixel hue by an amount to make one full revolution of the</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; color wheel (range of 65536) along the length of the strip</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; (strip.numPixels() steps):</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00979c">int</font> <font color="#000000">pixelHue</font> <font color="#434f54">=</font> <font color="#000000">firstPixelHue</font> <font color="#434f54">+</font> <font color="#000000">(</font><font color="#000000">i</font> <font color="#434f54">*</font> <font color="#000000">65536L</font> <font color="#434f54">&#47;</font> <font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">numPixels</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; strip.ColorHSV() can take 1 or 3 arguments: a hue (0 to 65535) or</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; optionally add saturation and value (brightness) (each 0 to 255).</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; Here we&#39;re using just the single-argument hue variant. The result</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; is passed through strip.gamma32() to provide &#39;truer&#39; colors</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; before assigning to each pixel:</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">setPixelColor</font><font color="#000000">(</font><font color="#000000">i</font><font color="#434f54">,</font> <font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">gamma32</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">ColorHSV</font><font color="#000000">(</font><font color="#000000">pixelHue</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">show</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; Update strip with new contents</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">wait</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47; Pause for a moment</font>
- &nbsp;<font color="#000000">}</font>
-<font color="#000000">}</font>
-
-<font color="#434f54">&#47;&#47; Rainbow-enhanced theater marquee. Pass delay time (in ms) between frames.</font>
-<font color="#00979c">void</font> <font color="#000000">theaterChaseRainbow</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">wait</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#00979c">int</font> <font color="#000000">firstPixelHue</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; First pixel starts at red (hue 0)</font>
- &nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">a</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">a</font><font color="#434f54">&lt;</font><font color="#000000">30</font><font color="#000000">;</font> <font color="#000000">a</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font> &nbsp;<font color="#434f54">&#47;&#47; Repeat 30 times...</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">b</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">b</font><font color="#434f54">&lt;</font><font color="#000000">3</font><font color="#000000">;</font> <font color="#000000">b</font><font color="#434f54">++</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">&#47;&#47; &nbsp;&#39;b&#39; counts from 0 to 2...</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">clear</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; &nbsp;&nbsp;Set all pixels in RAM to 0 (off)</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; &#39;c&#39; counts up from &#39;b&#39; to end of strip in increments of 3...</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">c</font><font color="#434f54">=</font><font color="#000000">b</font><font color="#000000">;</font> <font color="#000000">c</font><font color="#434f54">&lt;</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">numPixels</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#000000">c</font> <font color="#434f54">+=</font> <font color="#000000">3</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; hue of pixel &#39;c&#39; is offset by an amount to make one full</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; revolution of the color wheel (range 65536) along the length</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; of the strip (strip.numPixels() steps):</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00979c">int</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">hue</font> &nbsp;&nbsp;<font color="#434f54">=</font> <font color="#000000">firstPixelHue</font> <font color="#434f54">+</font> <font color="#000000">c</font> <font color="#434f54">*</font> <font color="#000000">65536L</font> <font color="#434f54">&#47;</font> <font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">numPixels</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00979c">uint32_t</font> <font color="#000000">color</font> <font color="#434f54">=</font> <font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">gamma32</font><font color="#000000">(</font><font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">ColorHSV</font><font color="#000000">(</font><font color="#000000">hue</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; hue -&gt; RGB</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">setPixelColor</font><font color="#000000">(</font><font color="#000000">c</font><font color="#434f54">,</font> <font color="#000000">color</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; Set pixel &#39;c&#39; to value &#39;color&#39;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">strip</font><font color="#434f54">.</font><font color="#d35400">show</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; Update strip with new contents</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">wait</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; Pause for a moment</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">firstPixelHue</font> <font color="#434f54">+=</font> <font color="#000000">65536</font> <font color="#434f54">&#47;</font> <font color="#000000">90</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; One cycle of color wheel over 90 frames</font>
- &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;<font color="#000000">}</font>
-<font color="#000000">}</font>
-
-</pre>
 	<br>
 	Afterwards, I used Tinkercad the test my code.
 	<br>

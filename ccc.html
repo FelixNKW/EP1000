@@ -34,6 +34,237 @@
 
 
 <h1>Computer Controlled Cutting</h1>
+<br>
+<h2>Laser Cutting</h2>
+<br>
+<p>
+	- Laser cutting is a process where material is placed in the X-Y plane and a <a href="https://en.wikipedia.org/wiki/Laser">
+	LASER (Light Amplification by Stimulated Emission of Radiation)</a> is moved across the profile to be cut out.
+	<br>
+	- A laser can be focused to a tight spot, which allows the beam to “cut” at the position.
+	<br>
+	- The high intensity of the beam causes the material to be vaporised (cut away).
+	<br>
+	- Since the light can be focused, a very thin cut is made. Electronics and machine control make the cut precise and repeatable.
+	<br>
+	- The laser can be programmed to have a continous wave or pulsed repeatedly to produce the cut.
+	<br>
+	- The process of laser cutting is controlled by:
+	<br>
+	-> The speed of the movement of the laser
+	-> Slow speeds allow the laser more time over the material and cuts deeper and more intensely.
+	<br>
+	-> Slow speeds also cause charring of the material.
+	<br>
+	- The intensity of the laser:
+	<br>
+	-> Higher intensities of the laser can cut deeper
+	<br>
+	-> Higher intensities are sometimes required as the material is more dense than others
+	<br>
+	- The number of pulses per second.
+	<br>
+	-> Most lasers are pulsed. The higher the number of pulses per second give higher intensities and prolonged exposure to the laser.
+	<br>
+	-> Higher pulsing reates are required for dense material
+	<br>
+	- Most lasers settings come with recommendations from the manufacturer or the Technicians and are dependent upon:
+	<br>
+	-> The material (e.g. wood, acrylic, paper)
+	-> The thickness of the material
+	<br>
+	-> The color/coloration of the material.
+</p>
 
+
+<br>
+<h2>Fusion 360 preparation for Laser Cut
+</h2>
+<br>
+<p>
+	- When designing in Fusion 360, we have the ability:
+	<br>
+	-> of modelling an object in 3 dimensions
+	<br>
+	-> to check for joints and obstructions
+	<br>
+	-> to check the aesthetics of the model.
+	<br>
+	- However, when we decide to laser cut the object we need to obtain the profile of the object and export it in a format that the cutting software recognises.
+	<br>
+	- This applies to other design software as well e.g. Illustrator, Rhino
+	<br>
+	- The preferred file formats required for laser cutting are:
+	<br>
+	-> <a href="https://en.wikipedia.org/wiki/AutoCAD_DXF">
+	AutoCAD DXF (Data eXchange Format)</a>
+	<br>
+	-> <a href="https://en.wikipedia.org/wiki/PDF">
+	PDF (Portable Document Format)</a>
+	<br>
+	-> <a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics">
+	SVG (Scalable Vector Graphics)</a>
+	<br>
+	- For our laser cutters, the software used to check and finalise your cuts is the <a href="https://www.coreldraw.com/en/">
+	CorelDraw</a> Graphics Suite which is able to handle both Vector and Raster images suitable for cutting and engraving. This is traditionally the recommended software though it is fast being replaced by Inkscape, RDWorks (for China Lasers) because of its costs.
+	<br>
+	- The workflow is as follows:
+	<br>
+	-> Obtain the 2D profile of the object face
+	<br>
+	-> Export the profile as DXF
+	<br>
+	-> Import the DXF file into CorelDraw
+	<br>
+	-> Make necessary changes and adjustments
+	<br>
+	-> Send/print the profile to the lasercutter
+	<br>
+	- This workflow applies to all Lasercutters.
+</p>
+
+
+<br>
+<h2>Obtaining DXF profiles from  Fusion 360</h2>
+<br>
+<p>
+	For this example, we will use the box profile in which I need to extract the side, front and base of the box. We assume that the box has been designed as in the <a href="cadf.html">Parametric Box</a>.
+</p>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+</style>
+
+<table>
+  <tr>
+  	<td>
+  		<a href="img/lc1.png"><img src="img/lc1.png" width="25%"></a>
+  	</td>
+  	<td>
+  		<p>
+		  	- Open your design in Fusion 360.
+		  	<br>
+			- In the Object Browser, expand and show the bodies/component list.
+			<br>
+			- If you have multiple components, make sure that the root or top-most object is selected.
+			<br>
+		</p>
+  	</td>
+  </tr>
+  <tr>
+  	<td>
+  		<a href="img/lc2.png"><img src="img/lc2.png" width="25%"></a>
+  	</td>
+  	<td>
+  		<p>
+	  		- Open your design in Fusion 360.
+	  		<br>
+			- In the Object Browser, expand and show the bodies/component list.
+			<br>
+			- If you have multiple components, make sure that the root or top-mose object is selected
+			<br>
+		</p>
+  	</td>
+  </tr>
+  <tr>
+  	<td>
+  		<a href="img/lc3.png"><img src="img/lc3.png" width="25%"></a>
+  	</td>
+  	<td>
+  		<p>
+	  		- Select the body which you want to extract the profile.
+	  		<br>
+			- To help you, you can turn off the bodies which are not of interest
+			<br>
+			- In this case only the FRONT component is selected
+			Click onto the body surface to select the sketch plane.
+			<br>
+	</p>
+  	</td>
+  </tr>
+  <tr>
+  	<td>
+  		<a href="img/lc4.png"><img src="img/lc4.png" width="25%"></a>
+  	</td>
+  	<td>
+  		- Make a new sketch on this FRONT plane:
+  		<br>
+		1. Create > Create Sketch
+		<br>
+		2. Select(L-Click) the body surface to select the sketch plane.
+		<br>
+		3. Important Click again on the profile (it should turn BLUE), showing you the sketch profile.
+		<br>
+		4. Click FINISH SKETCH
+		<br>
+		5. Your sketch should be located in the Object Browser > Sketches
+		<br>
+		6. Select “Finish Sketch”
+		<br>
+		7. Rename the sketch to identify it (e.g. FRONT_DXF)
+		<br>
+  	</td>
+  </tr>
+  <tr>
+  	<td>
+  		<a href="img/lc5.png"><img src="img/lc5.png" width="25%"></a>
+  	</td>
+  	<td>
+  		- Export the profile as DXF:
+  		<br>
+		1. Right-click on the Sketch FRONT_DXF
+		<br>
+		2. Select the Save As DXF Option
+		<br>
+		3. Enter an appropriate name for the file e.g. FRONT
+		<br>
+		4. enote of the Folder where the document is to be saved.
+		<br>
+  	</td>
+  </tr>
+  <tr>
+  	<td>
+  		<a href="img/lc6.png"><img src="img/lc6.png" width="25%"></a>
+  	</td>
+  	<td>
+  		- Repeat the above steps for each of the profiles that you want to cut FRONT, SIDE, BASE
+  		<br>
+		- The Front and Sides are mirrored, and are similar, so only one profile need to be saved.
+		<br>
+  	</td>
+  </tr>
+</table>
+
+
+<br>
+<h2>Kerf</h2>
+<br>
+<p>
+	- Laser cutting is very precise, giving you accuracies and repeatability in terms of tenth’s of a millimeter. 
+	<br>
+	- However, sometimes you would like to create <a href="https://www.merriam-webster.com/dictionary/press%20fit">Press-Fit</a> objects that are assembled without glue or any other materials.
+	<br>
+	- When a laser cuts through material, some material is removed in the process. The material that is removed is called the <a href="https://www.merriam-webster.com/dictionary/kerf">Kerf</a>.
+	<br>
+	-> The kerf in laser cutters is very small (approx. 0.3 ~ 0.8 mm) depending on the material and how it is cut.
+	<br>
+	-> If we can calculate the Kerf (through experimentation) we can make adjustments to ensure that the cuts are press-fit.
+	<br>
+	- Adjusments are usually made by:
+	<br>
+	-> decreasing the size of the “holes”
+	<br>
+	-> increasing the size of the “tabs”
+	<br>
+	- Can be done parametrically by adding an adjustment value to compensate for the kerf.
+</p>
+<br>
 </body>
 </html>
